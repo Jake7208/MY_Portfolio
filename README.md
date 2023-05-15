@@ -10,7 +10,13 @@ The REST API project was a collaborative effort where my team developed an API t
 
 # Resume Project
 
-The resume project was a solo project where I developed a website that showcased my resume in an interactive and user-friendly way. I used Svelte to create the frontend and C# for the backend. The website features a sleek and modern design that is easy to navigate. I also used Tailwind CSS to add custom styling to the website.
+The resume project is an online business venture that I am working on, which uses C# for the backend and Tailwind and Svelte for the frontend. The project aims to simplify the process of building resumes by providing users with easy-to-use templates and tools to create custom resumes.
+
+The website has a sleek and modern design that is easy to navigate, making it user-friendly. The main focus of the project is to simplify the resume process for users who may not have extensive knowledge of design or formatting. With our templates and easy-to-use tools, users can create professional-looking resumes quickly and easily.
+
+Our project aims to be a one-stop-shop for all things resume-related, and we are constantly working to improve our services and offerings. We are dedicated to providing the best possible experience for our users and helping them to achieve their career goals.
+
+If you have any questions or would like to learn more about our project, please feel free to reach out to me via email at jake7208@gmail.com or connect with me on LinkedIn at https://www.linkedin.com/in/jacob-price-768120240.
 
 # Contact Information
 
