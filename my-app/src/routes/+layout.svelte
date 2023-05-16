@@ -2,10 +2,6 @@
 	import '../app.css';
 </script>
 
-<slot />
-
-<style>
-	:global(html) {
-		background-color: theme;
-	}
-</style>
+<html class="bg-black text-white text-center overflow-hidden" lang="en">
+	<slot />
+</html>
