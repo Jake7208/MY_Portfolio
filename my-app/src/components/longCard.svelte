@@ -2,7 +2,7 @@
 </script>
 
 <div
-	class="bg-gray-300 h-[25vh] w-auto mx-2 rounded-2xl text-black text-sm font-mono"
+	class="bg-gray-300 h-[20vh] w-auto mx-2 rounded-2xl text-black text-sm font-mono"
 	style="font-size: 1em; line-height: 1.5"
 >
 	<div class="card grid grid-cols-4 h-full">
