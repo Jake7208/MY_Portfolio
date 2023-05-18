@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"split-type": "^0.3.3",
 		"svelte-typed-js": "^1.0.3",
 		"typed.js": "^2.0.16"
 	}
