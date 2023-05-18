@@ -2,7 +2,7 @@
 	<h1>About Me</h1>
 </div>
 
-<div class="p-10 bg-white text-black">
+<div class="p-10 bg-white text-black h-screen">
 	<h2 class="font-bold text-4xl">heres some more</h2>
 	<p>
 		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, neque laborum. Labore in,
