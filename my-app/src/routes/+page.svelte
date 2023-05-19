@@ -4,10 +4,6 @@
 	import LongCard from '../components/longCard.svelte';
 	import Paralax from '../components/paralax.svelte';
 	import Nav from '../components/nav.svelte';
-	import ScrollFun from '../components/scrollFun.svelte';
-	import BackendScroll from '../components/backendScroll.svelte';
-	import Databases from '../components/databases.svelte';
-	import Social from '../components/social.svelte';
 
 	let typedElement;
 	let typedInstance;
@@ -59,21 +55,34 @@
 		let left = document.querySelector('#scroll-stuff');
 		left.scrollBy(-500, 0);
 	}
+	function scrollingL() {
+		let left = document.querySelector('#snapContainer');
+		left.scrollBy(-500, 0);
+	}
 
 	function scrollingR() {
-		let right = document.querySelector('#scroll-stuff');
+		let right = document.querySelector('#snapContainer');
 		right.scrollBy(500, 0);
 	}
+	onMount(() => {
+		const snapContainer = document.getElementById('snapContainer');
+		snapContainer.scrollLeft = snapContainer.offsetWidth / 2;
+	});
 </script>
 
 <main class="max-h-screen overflow-y-scroll snap snap-y snap-mandatory no-scrollbar">
-	<section class="w-full h-screen bg-black- snap-start">
+	<section class="w-full h-screen bg-black snap-start">
 		<Nav />
-		<div class="flex-shrink-0 h-screen flex items-center justify-center">
+		<div class="flex-shrink-0 h-[75%] flex items-center justify-center">
 			<div class="text-8xl lg:text-8xl md:text-6xl">
 				<span bind:this={typedElement} />
 			</div>
 		</div>
+		<!-- <ScrollFun />
+			<BackendScroll />
+			<Databases />
+			<Social /> -->
+		<LongCard />
 	</section>
 
 	<section class=" h-screen bg-black snap-start scroll-smooth">
@@ -90,17 +99,46 @@
 			</div>
 			<div class="snap-start bg-black w-full flex-shrink-0 h-screen flex items-center text-8xl">
 				<button
-					class="text-white bg-black hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
-					on:click={scrolling}>prev</button
+					class="text-white hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
+					on:click={scrolling}>Back</button
 				>
 			</div>
 		</div>
 	</section>
-	<section class="flex flex-wrap h-screen snap-start">
-		<ScrollFun class="bg-indigo-300" />
-		<BackendScroll class="bg-orange-300" />
-		<Databases class="bg-green-300" />
-		<Social class="bg-pink-300" />
+	<section class="snap-start h-screen bg-gray-950 scroll-smooth">
+		<div
+			class="snap-x mx-auto snap-mandatory h-screen flex w-full overflow-scroll scroll-smooth no-scrollbar"
+			id="snapContainer"
+		>
+			<div
+				class="snap-start bg-black w-1/2 flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
+			>
+				<button
+					class=" hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse items-center justify-end h-10 w-20 mt-5 text-black"
+					on:click={scrollingR}>Back</button
+				>
+			</div>
+			<button
+				class="snap-start bg-white w-1/2 flex-shrink-0 h-screen flex items-center justify-center text-4xl max-md:text-2xl max-sm:text-xl text-black dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
+				on:click={scrollingL}
+			>
+				FrontEnd
+			</button>
+			<button
+				class="snap-start bg-black w-1/2 flex-shrink-0 h-screen flex items-center justify-center text-4xl max-md:text-2xl max-sm:text-xl scroll-smooth dark:focus:ring-white cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
+				on:click={scrollingR}
+			>
+				BackEnd
+			</button>
+			<div
+				class="snap-start bg-white w-1/2 flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
+			>
+				<button
+					class="text-white hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-black dark:hover:bg-gray-700 dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse items-center justify-center h-10 w-20 mt-5"
+					on:click={scrollingL}>Back</button
+				>
+			</div>
+		</div>
 	</section>
 	<div class="snap-y snap-mandatory h-1/4" />
 </main>

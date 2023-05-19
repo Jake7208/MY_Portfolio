@@ -26,4 +26,28 @@
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}
+	.animation-scroll {
+		animation: scrollAnimation 10s linear infinite;
+	}
+
+	.animation-scroll-DB {
+		animation: scrollAnimationData 10s linear infinite;
+	}
+}
+
+@keyframes scrollAnimation {
+	0% {
+		transform: translateY(-470%);
+	}
+	100% {
+		transform: translateY(470%);
+	}
+}
+@keyframes scrollAnimationData {
+	0% {
+		transform: translateY(-670%);
+	}
+	100% {
+		transform: translateY(670%);
+	}
 }
