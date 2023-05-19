@@ -11,12 +11,6 @@
 </script>
 
 <div class="flex flex-col justify-center items-center">
-	<!-- <div>
-		<ScrollFun />
-	</div>
-	<div>
-		<BackendScroll />
-	</div> -->
 	<!-- Added 'items-center' class -->
 	<h2 class="font-bold text-4xl max-md:text-2xl max-sm:text-xl mb-6">
 		Hi, I'm <span class="text-[#FC7823]">Jacob Price</span>
