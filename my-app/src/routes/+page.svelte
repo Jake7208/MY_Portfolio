@@ -6,8 +6,11 @@
 	import Nav from '../components/nav.svelte';
 	import FrontEndCard from '../components/FrontEndCard.svelte';
 	import ContactForm from '../components/contactForm.svelte';
-	import emailjs from '@emailjs/browser';
 	import Projects from '../components/projects.svelte';
+	const imgUrl = new URL('../components/projects/js.png', import.meta.url).href;
+	const imgUrl1 = new URL('../components/projects/animated.png', import.meta.url).href;
+	const imgUrl2 = new URL('../components/projects/frontend-design.png', import.meta.url).href;
+	const imgUrl3 = new URL('../components/projects/resume.png', import.meta.url).href;
 	let typedElement;
 	let typedInstance;
 	let isStringComplete = false;
@@ -130,7 +133,7 @@
 </div>
 <div
 	bind:this={element}
-	class=" h-[90vh] w-screen z-10 bottom-0 flex justify-center items-center text-6xl bg-black text-white"
+	class=" h-[100vh] w-auto z-10 bottom-0 flex justify-center items-center text-6xl bg-black text-white overflow-hidden"
 	style:transform={`translateY(${200 - scroll / 4}px)`}
 >
 	Projects
@@ -146,22 +149,57 @@
 			class="snap-start bg-white w-full flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
 		>
 			<div class="snap-y snap-mandatory h-screen w-full overflow-scroll">
-				<div
-					class="snap-start bg-amber-200 w-full h-screen flex items-center justify-center text-8xl"
-				/>
-				<div
-					class="snap-start bg-teal-200 w-full h-screen flex items-center justify-center text-8xl"
-				>
-					2
+				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
+					<FrontEndCard />
 				</div>
-				<div
-					class="snap-start bg-cyan-200 w-full h-screen flex items-center justify-center text-8xl"
-				>
-					3
+				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
+					<div
+						class="max-w-md bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto mx-auto"
+					>
+						<img class="rounded-t-lg" src={imgUrl} alt="" />
+						<div class="p-5">
+							<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-lg">
+								Languages used in this project
+							</h5>
+							<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm">
+								Javascript, HTML, CSS
+							</p>
+						</div>
+					</div>
 				</div>
-				<div class="snap-start bg-fuchsia-200 w-full h-screen flex justify-center text-8xl">
+				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
+					<div
+						class="max-w-md bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto mx-auto"
+					>
+						<img class="rounded-t-lg" src={imgUrl2} alt="" />
+						<div class="p-5">
+							<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-lg">
+								Languages used in this project
+							</h5>
+							<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm">
+								Javascript, HTML, CSS, openprops(CSS)
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
+					<div
+						class="max-w-md bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto mx-auto"
+					>
+						<img class="rounded-t-lg" src={imgUrl1} alt="" />
+						<div class="p-5">
+							<h5 class="mb-2 font-bold tracking-tight text-gray-900 dark:text-white text-lg">
+								Languages used in this project
+							</h5>
+							<p class="mb-3 font-normal text-gray-700 dark:text-gray-400 text-sm">
+								CSS animations
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="snap-start bg-black w-full h-screen flex justify-center text-8xl">
 					<button
-						class=" items-end text-white hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-black dark:hover:bg-gray-700 dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse h-10 w-20 mt-5"
+						class=" items-end text-black hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-white dark:hover:bg-gray-700 dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse h-10 w-20 mt-5"
 						on:click={scrollingR}>Back</button
 					>
 				</div>
@@ -175,7 +213,7 @@
 		FrontEnd
 	</button>
 	<button
-		class="snap-start bg-black hover:bg-orange-900 w-1/2 flex-shrink-0 h-screen flex items-center justify-center text-4xl max-md:text-2xl max-sm:text-xl text-white scroll-smooth dark:focus:ring-orange-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
+		class="snap-start hover:bg-orange-900 w-1/2 flex-shrink-0 h-screen flex items-center justify-center text-4xl max-md:text-2xl max-sm:text-xl text-white scroll-smooth dark:focus:ring-orange-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
 		on:click={scrollingR}
 	>
 		BackEnd
@@ -183,19 +221,83 @@
 	<div
 		class="snap-start bg-white w-1/2 flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
 	>
-		<div class="snap-y snap-mandatory h-screen w-full overflow-scroll">
-			<div
-				class="snap-start bg-amber-200 w-full h-screen flex items-center justify-center text-8xl"
-			>
-				<Projects />
+		<div class="snap-y snap-mandatory h-screen w-full overflow-scroll bg-black">
+			<div class=" snap-start bg-white w-full h-screen flex items-center justify-center text-8xl">
+				<div
+					class="flex flex-col h rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row"
+				>
+					<div class="flex flex-col justify-start p-6 max-w-md w-[50vw] h-auto">
+						<h5 class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50">
+							Team development
+						</h5>
+
+						<span class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-black rounded-full mr-1.5 flex-shrink-0"
+							/>express</span
+						>
+						<span class="flex items-center text-sm font-medium text-green-700 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-green-800 rounded-full mr-1.5 flex-shrink-0"
+							/>node.js</span
+						>
+						<span class="flex items-center text-sm font-medium text-green-700 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-green-600 rounded-full mr-1.5 flex-shrink-0"
+							/>mongoDB</span
+						>
+						<span class="flex items-center text-sm font-medium text-green-700 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-orange-600 rounded-full mr-1.5 flex-shrink-0"
+							/>REST</span
+						>
+					</div>
+				</div>
 			</div>
-			<div class="snap-start bg-teal-200 w-full h-screen flex items-center justify-center text-8xl">
-				2
+			<div class="snap-start bg-white w-full h-screen flex items-center justify-center text-8xl">
+				<div
+					class="flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row"
+				>
+					<div class="flex flex-col justify-start p-6 max-w-md w-[50vw] h-auto">
+						<h5
+							class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50 border-r-black"
+						>
+							C# code with mosh
+						</h5>
+
+						<span class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"
+							/>C#</span
+						>
+					</div>
+				</div>
 			</div>
-			<div class="snap-start bg-cyan-200 w-full h-screen flex items-center justify-center text-8xl">
-				3
+			<div class="snap-start bg-white w-full h-screen flex items-center justify-center text-8xl">
+				<div
+					class="flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row"
+				>
+					<div class="flex flex-col justify-start p-6">
+						<h5
+							class="mb-2 text-xl font-medium text-neutral-800 dark:text-neutral-50 max-w-md w-[50vw] h-auto"
+						>
+							PHP LinkedIn
+						</h5>
+
+						<span class="flex items-center text-sm font-medium text-green-700 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-indigo-600 rounded-full mr-1.5 flex-shrink-0"
+							/>php</span
+						>
+						<span class="flex items-center text-sm font-medium text-green-700 dark:text-white"
+							><span
+								class="flex w-2.5 h-2.5 bg-orange-600 rounded-full mr-1.5 flex-shrink-0"
+							/>REST</span
+						>
+					</div>
+				</div>
 			</div>
-			<div class="snap-start bg-fuchsia-200 w-full h-screen flex justify-center text-8xl">
+			<div class="snap-start bg-white w-full h-screen flex justify-center text-8xl">
 				<button
 					class=" items-end text-white hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-black dark:hover:bg-gray-700 dark:focus:ring-gray-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse h-10 w-20 mt-5"
 					on:click={scrollingL}>Back</button
