@@ -134,7 +134,7 @@
 <div
 	bind:this={element}
 	class=" h-[100vh] w-auto z-10 bottom-0 flex justify-center items-center text-6xl bg-black text-white overflow-hidden"
-	style:transform={`translateY(${200 - scroll / 4}px)`}
+	style:transform={`translateY(${500 - scroll / 2}px)`}
 >
 	Projects
 </div>
@@ -148,7 +148,7 @@
 		<div
 			class="snap-start bg-white w-full flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
 		>
-			<div class="snap-y snap-mandatory h-screen w-full overflow-scroll">
+			<div class="snap-y snap-mandatory h-screen w-full overflow-scroll no-scrollbar">
 				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
 					<FrontEndCard />
 				</div>
@@ -169,7 +169,7 @@
 				</div>
 				<div class="snap-start bg-black w-full h-screen flex items-center justify-center text-8xl">
 					<div
-						class="max-w-md bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto mx-auto"
+						class="max-w-md bg-white border border-black rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 h-auto mx-auto no-scrollbar"
 					>
 						<img class="rounded-t-lg" src={imgUrl2} alt="" />
 						<div class="p-5">
@@ -221,7 +221,7 @@
 	<div
 		class="snap-start bg-white w-1/2 flex-shrink-0 h-screen flex text-4xl max-md:text-2xl max-sm:text-xl"
 	>
-		<div class="snap-y snap-mandatory h-screen w-full overflow-scroll bg-black">
+		<div class="snap-y snap-mandatory h-screen w-full overflow-scroll bg-black no-scrollbar">
 			<div class=" snap-start bg-white w-full h-screen flex items-center justify-center text-8xl">
 				<div
 					class="flex flex-col h rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row"
