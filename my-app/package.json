@@ -27,6 +27,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.11.0",
+		"emailjs": "^4.0.2",
 		"split-type": "^0.3.3",
 		"svelte-typed-js": "^1.0.3",
 		"typed.js": "^2.0.16"

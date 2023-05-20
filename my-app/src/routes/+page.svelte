@@ -4,7 +4,10 @@
 	import LongCard from '../components/longCard.svelte';
 	import Paralax from '../components/paralax.svelte';
 	import Nav from '../components/nav.svelte';
-
+	import FrontEndCard from '../components/FrontEndCard.svelte';
+	import ContactForm from '../components/contactForm.svelte';
+	import emailjs from '@emailjs/browser';
+	import Projects from '../components/projects.svelte';
 	let typedElement;
 	let typedInstance;
 	let isStringComplete = false;
@@ -51,10 +54,6 @@
 			}, 3000);
 		}
 	}
-	function scrolling() {
-		let left = document.querySelector('#scroll-stuff');
-		left.scrollBy(-500, 0);
-	}
 	function scrollingL() {
 		let left = document.querySelector('#snapContainer');
 		left.scrollBy(-500, 0);
@@ -71,6 +70,27 @@
 
 	let scroll;
 	let height;
+
+	let element;
+	let lastScrollTop = 0;
+
+	const handleScroll = () => {
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		let scrollDelta = lastScrollTop - scrollTop;
+
+		let transformValue =
+			parseInt(window.getComputedStyle(element).getPropertyValue('transform').split(',')[5]) || 0;
+		element.style.transform = `translateY(${transformValue - 2 * scrollDelta}px)`;
+		lastScrollTop = scrollTop;
+
+		onMount(() => {
+			window.addEventListener('scroll', handleScroll);
+
+			return () => {
+				window.removeEventListener('scroll', handleScroll);
+			};
+		});
+	};
 </script>
 
 <svelte:window bind:scrollY={scroll} bind:innerHeight={height} />
@@ -86,26 +106,34 @@
 		<Databases />
 		<Social /> -->
 <div
-	class="fixed h-[100vh] w-screen z-10 bottom-0 flex justify-center items-center text-6xl bg-white text-white"
+	class="fixed h-[100vh] w-screen z-10 bottom-0 flex justify-center items-center text-6xl bg-black text-white"
 	style:transform={`translateY(${height - scroll * 2}px)`}
-/>
+>
+	Who Am I?
+</div>
 <div
 	id="scroll-stuff"
 	class="snap-x mx-none snap-mandatory h-screen flex w-full overflow-x-scroll overflow-y-hidden scroll-smooth no-scrollbar"
 >
 	<div
-		class="snap-start bg-gray-950 w-full flex-shrink-0 h-screen flex items-center justify-center text-8xl"
+		class="snap-start bg-black w-full flex-shrink-0 h-screen flex items-center justify-center text-8xl"
 	>
 		<div class="h-screen flex justify-center items-center text-6xl bg-black text-white">
 			<Paralax />
 		</div>
 	</div>
-	<div class="snap-start bg-black w-full flex-shrink-0 h-screen flex items-center text-8xl">
-		<button
-			class="text-white hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-4 py-2 text-center ml-3 md:mr-0 dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800 cursor-pointer transition-all hover:-translate-y-[.15rem] delay-150 duration-500 hover:animate-pulse"
-			on:click={scrolling}>Back</button
-		>
+	<div
+		class="snap-start bg-black w-full flex-shrink-0 h-screen flex justify-center items-center text-8xl"
+	>
+		<ContactForm />
 	</div>
+</div>
+<div
+	bind:this={element}
+	class=" h-[90vh] w-screen z-10 bottom-0 flex justify-center items-center text-6xl bg-black text-white"
+	style:transform={`translateY(${200 - scroll / 4}px)`}
+>
+	Projects
 </div>
 <div
 	class="snap-x mx-auto snap-mandatory h-screen flex w-full overflow-scroll scroll-smooth no-scrollbar"
@@ -120,9 +148,7 @@
 			<div class="snap-y snap-mandatory h-screen w-full overflow-scroll">
 				<div
 					class="snap-start bg-amber-200 w-full h-screen flex items-center justify-center text-8xl"
-				>
-					1
-				</div>
+				/>
 				<div
 					class="snap-start bg-teal-200 w-full h-screen flex items-center justify-center text-8xl"
 				>
@@ -161,7 +187,7 @@
 			<div
 				class="snap-start bg-amber-200 w-full h-screen flex items-center justify-center text-8xl"
 			>
-				1
+				<Projects />
 			</div>
 			<div class="snap-start bg-teal-200 w-full h-screen flex items-center justify-center text-8xl">
 				2

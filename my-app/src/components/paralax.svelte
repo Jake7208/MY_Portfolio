@@ -10,12 +10,12 @@
 	}
 </script>
 
-<div class="flex flex-col justify-center items-center">
+<div class="flex flex-col justify-center items-center bg-black">
 	<!-- Added 'items-center' class -->
 	<h2 class="font-bold text-4xl max-md:text-2xl max-sm:text-xl mb-6">
 		Hi, I'm <span class="text-[#FC7823]">Jacob Price</span>
 	</h2>
-	<p class="text-lg max-md:text-md max-sm:text-sm">
+	<p class="text-lg max-md:text-md max-sm:text-sm leading-8 lg:max-w-4xl">
 		I'm a <span class="text-[#FC7823] font-bold">Full Stack Developer</span> experienced in MongoDB,
 		Node.js, and Express. I recently
 		<span class="text-[#FC7823] font-bold">graduated from Bridgerland Technical College,</span>
